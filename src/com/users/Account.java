@@ -5,10 +5,10 @@ public class Account {
     private int accountId;
     private String emailId;
 
-    public Account(){
-        this.setAccountId(accountId);
-        this.setEmailId(emailId);
-        this.setName(name);
+    public Account(String name, int accountId, String emailId){
+        this.name = name;
+        this.accountId = accountId;
+        this.emailId = emailId;
     }
 
     public String getName() {

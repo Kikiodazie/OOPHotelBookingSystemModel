@@ -17,12 +17,16 @@ public class Guest extends Account {
     private Date date;
     private PaymentDetails paymentDetails;
 
-    public Guest(Hotel bookingHotel){
-        super();
+    public Guest(String name, int accountId, String emailId, Hotel bookingHotel){
+        super(name, accountId, emailId);
         this.setHotel(bookingHotel);
         paymentDetails = new PaymentDetails();
     }
 
+    /*
+    *This method when called books a room
+    *
+     */
 
     public void bookRoom(){
         System.out.println("Here are the available rooms in " + hotel.getName());
@@ -45,21 +49,19 @@ public class Guest extends Account {
                     reservationDetails();
                     break;
                 }else {
-                    payForRoom(room);
+                    System.out.println("Invalid Payment");
                 }
 
+            }else {
+                System.out.println("Wrong room number");
             }
 
         }
-
-
-
-
-        //Calling pay method to pay for booked room
-//        payForRoom();
-        //use booking Status Enum./
-
     }
+
+    /*
+    * Allows user pay for room
+     */
     public void payForRoom(Room room){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Input Your Card number: ");
@@ -73,7 +75,7 @@ public class Guest extends Account {
         if (cardType == 1) getPaymentDetails().setPaymentMode(PaymentMode.MASTERCARD);
 
         if (cardType == 2) getPaymentDetails().setPaymentMode(PaymentMode.VERVE);
-        if (cardType == 3) getPaymentDetails().setPaymentMode(PaymentMode.VERVE);
+        if (cardType == 3) getPaymentDetails().setPaymentMode(PaymentMode.VISA);
         int cost = scanner2.nextInt();
         getPaymentDetails().setAmount(cost);
 
