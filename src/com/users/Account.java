@@ -6,9 +6,9 @@ public class Account {
     private String emailId;
 
     public Account(String name, int accountId, String emailId){
-        this.name = name;
-        this.accountId = accountId;
-        this.emailId = emailId;
+        this.setName(name);
+        this.setAccountId(accountId);
+        this.setEmailId(emailId);
     }
 
     public String getName() {
