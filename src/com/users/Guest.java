@@ -17,10 +17,9 @@ public class Guest extends Account {
     private Date date;
     private PaymentDetails paymentDetails;
 
-    public Guest(String name, int accountId, String emailId, Hotel bookingHotel){
+    public Guest(String name, int accountId, String emailId){
         super(name, accountId, emailId);
-        this.setHotel(bookingHotel);
-        paymentDetails = new PaymentDetails();
+        this.paymentDetails = new PaymentDetails();
     }
 
     /*

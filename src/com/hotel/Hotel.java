@@ -30,11 +30,7 @@ public class Hotel {
         System.out.print("Room cost: ");
         int roomCost = scannerInt.nextInt();
 
-        Room room = new Room();
-        room.setRoomNumber(roomNumber);
-        room.setRoomType(roomType);
-        room.setCost(roomCost);
-
+        Room room = new Room(roomCost, roomType, roomNumber);
         rooms.add(room);
     }
 

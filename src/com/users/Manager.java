@@ -6,9 +6,8 @@ public class Manager extends Account {
     private Hotel hotel;
     private final String ACCESSKEY = "akachukwu123";
 
-    public Manager(String name, int accountId, String emailId,Hotel theHotelYouAreManagerOf){
+    public Manager(String name, int accountId, String emailId){
         super(name, accountId, emailId);
-        this.setHotel(theHotelYouAreManagerOf);
     }
 
     public Hotel getHotel() {

@@ -5,7 +5,7 @@ public class Room {
     private int roomNumber;
     private int cost;
 
-    public Room(){
+    public Room(int cost, String roomType, int roomNumber){
         this.setCost(cost);
         this.setRoomType(roomType);
         this.setRoomNumber(roomNumber);
